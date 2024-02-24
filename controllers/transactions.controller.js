@@ -35,8 +35,8 @@ module.exports.initialize  = async (req, res) => {
 }
 
 module.exports.getTransactions = async (req, res) => {
-    const { page = 1, perPage = 10, search = '', month } = req.query;
-    const offset = (page - 1) * perPage;
+    const { page = 1, limit = 10, search = '', month } = req.query;
+    const offset = (page - 1) * limit;
     let searchQuery = '';
     if (search) {
       searchQuery = `AND (title ILIKE '%${search}%' OR description ILIKE '%${search}%' OR CAST(price AS TEXT) ILIKE '%${search}%')`;
