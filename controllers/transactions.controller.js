@@ -51,7 +51,7 @@ module.exports.getTransactions = async (req, res) => {
     try {
       const transactions = await pool.query(
         `SELECT * FROM transactions WHERE true ${searchQuery} ${monthQuery} ORDER BY id ASC LIMIT $1 OFFSET $2`,
-        [perPage, offset]
+        [limit, offset]
       );
       res.json(transactions.rows);
       } catch (error) {
