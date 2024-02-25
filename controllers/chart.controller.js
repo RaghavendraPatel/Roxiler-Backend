@@ -32,7 +32,7 @@ const getBarChartData = async (monthNumber) => {
               (601, 700, '601-700'),
               (701, 800, '701-800'),
               (801, 900, '801-900'),
-              (901, 1000000, '901-above') -- Adjust the upper limit as needed
+              (901, 1000000, '901-above') 
             ) AS t(min_price, max_price, label)
           ),
           transaction_counts AS (
